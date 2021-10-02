@@ -14,6 +14,9 @@
 
 ![](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
 
+### Important Note:
+Please Try to add more projects/apps/webapp instead of just DSA codes :)
+<hr>
 
 This is a beginners repository for anyone wishing to contribute to HacktoberFest 2021
 
