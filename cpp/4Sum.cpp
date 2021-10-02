@@ -61,7 +61,7 @@ int main()
 	vector<vector<int>> res = fourSum(arr, target);
 
 	for (int i = 0; i < res.size(); ++i) {
-		for (int j = 0; res[i].size(); ++i)P{
+		for (int j = 0; res[i].size(); ++i) {
 			cout << res[i][j] << " ";
 		}
 		cout << '\n';
