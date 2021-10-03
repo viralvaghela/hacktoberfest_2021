@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class Week12_a {
+public class Registration_form {
     public static void main(String s[]){
        form f = new form();
     }
