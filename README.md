@@ -16,6 +16,7 @@
 
 ### Important Note:
 Please Try to add more projects/apps/webapp instead of just DSA codes :)
+Copying DSA Code from internet and sending a PR to get a free T-shirt is not allowed. This repo is for beginners to help them to start contribution towards open source...
 <hr>
 
 This is a beginners repository for anyone wishing to contribute to HacktoberFest 2021
