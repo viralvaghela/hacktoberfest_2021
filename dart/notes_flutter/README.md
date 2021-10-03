@@ -6,11 +6,10 @@ I am beginner in flutter, made this app to understand how Bloc pattern works.
 
 # Screenshots
 
-![ScreenShot 1](/ss1.jpg)
-![ScreenShot 2](/ss2.jpg)
-![ScreenShot 3](/ss3.jpg)
-![ScreenShot 4](/ss4.jpg)
-![ScreenShot 5](/ss5.jpg)
-![ScreenShot 6](/ss6.jpg)
-
+<img height="500" src="https://github.com/aakashpsindhi/hacktoberfest_2021/blob/main/dart/notes_flutter/screenshots/ss1.jpg"/>
+<img height="500" src="https://github.com/aakashpsindhi/hacktoberfest_2021/blob/main/dart/notes_flutter/screenshots/ss2.jpg"/>
+<img height="500" src="https://github.com/aakashpsindhi/hacktoberfest_2021/blob/main/dart/notes_flutter/screenshots/ss3.jpg"/>
+<img height="500" src="https://github.com/aakashpsindhi/hacktoberfest_2021/blob/main/dart/notes_flutter/screenshots/ss4.jpg"/>
+<img height="500" src="https://github.com/aakashpsindhi/hacktoberfest_2021/blob/main/dart/notes_flutter/screenshots/ss5.jpg"/>
+<img height="500" src="https://github.com/aakashpsindhi/hacktoberfest_2021/blob/main/dart/notes_flutter/screenshots/ss6.jpg"/>
 
