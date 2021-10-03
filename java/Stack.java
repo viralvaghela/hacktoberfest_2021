@@ -1,113 +1,88 @@
-class Stack
-{
-	int a[] = new int[5];
-	int top = 0;
+// Stack implementation in Java
 
+class Stack {
 
+  // store elements of stack
+  private int arr[];
+  // represent top of stack
+  private int top;
+  // total capacity of the stack
+  private int capacity;
 
-	public void push(int data)
-	{
-		
-		if(top == a.length)
-		{
-			int b[] = new int[2*a.length];
-			for(int i = 0; i < a.length; i++)
-			{
-				b[i] = a[i];
-			}
-			a = b;
+  // Creating a stack
+  Stack(int size) {
+    // initialize the array
+    // initialize the stack variables
+    arr = new int[size];
+    capacity = size;
+    top = -1;
+  }
 
-		}
+  // push elements to the top of stack
+  public void push(int x) {
+    if (isFull()) {
+      System.out.println("Stack OverFlow");
 
-		a[top++] = data;
-	}
+      // terminates the program
+      System.exit(1);
+    }
 
-	public int pop()
-	{
-		if(isEmpty())
-		{
-			System.out.println("Stack is Empty");
-			return 0;
-		}
+    // insert element on top of stack
+    System.out.println("Inserting " + x);
+    arr[++top] = x;
+  }
 
-		else
-		{
-			int data;
-			top--;
-			data = a[top];
-			a[top]=0;
-			return data;
-		}
-	}
+  // pop elements from top of stack
+  public int pop() {
 
-	public boolean isEmpty()
-	{
-		return top==0;
-			
-	}	
-		
-	
+    // if stack is empty
+    // no element to pop
+    if (isEmpty()) {
+      System.out.println("STACK EMPTY");
+      // terminates the program
+      System.exit(1);
+    }
 
-	public int peek()
-	{
-		if(isEmpty())
-		{
-			System.out.println("Stack is Empty");
-			return 0;
-		}
+    // pop element from top of stack
+    return arr[top--];
+  }
 
-		else
-		{
-		int data;
-		
-		data = a[top-1];
-		return data;
-    	}
-	}
+  // return size of the stack
+  public int getSize() {
+    return top + 1;
+  }
 
-	public int size()
-	{
-		return top;
-	}
+  // check if the stack is empty
+  public Boolean isEmpty() {
+    return top == -1;
+  }
 
-	public void print()
-	{
-		System.out.print("[");
-		for(int i = 0;i < top;i++)
-		{
-            if(i == top-1)
-			    System.out.print(a[i]);
+  // check if the stack is full
+  public Boolean isFull() {
+    return top == capacity - 1;
+  }
 
-            else
-                System.out.print(a[i] + ", ");
-		}
+  // display elements of stack
+  public void printStack() {
+    for (int i = 0; i <= top; i++) {
+      System.out.print(arr[i] + ", ");
+    }
+  }
 
-		System.out.println("]");
-	}
+  public static void main(String[] args) {
+    Stack stack = new Stack(5);
 
-    public static void main(String[]args)
-	{
-		Stack s1 = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
 
-		
+    System.out.print("Stack: ");
+    stack.printStack();
 
-		s1.push(10);
-		s1.push(2);
-		s1.push(5);
-		s1.push(7);
-		s1.push(15);
-		s1.push(20);
+    // remove element from stack
+    stack.pop();
+    System.out.println("\nAfter popping out");
+    stack.printStack();
 
-        s1.print();
-
-		s1.pop();
-		s1.pop();
-		s1.pop();
-		
-        s1.print();
-
-		System.out.println("Peek = " + s1.peek());
-		System.out.println("Size = " + s1.size());
-        
-	}
+  }
 }
