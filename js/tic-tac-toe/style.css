@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+:root{
+    font-size:62.5%;
+    /* variables for the web theming */
+}
+body{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+/* entire web graphics */
+.container{
+    width:100%;
+    height:100%;
+    background-image:linear-gradient(to right,#1488cc ,#2b32b2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.container::before{
+    content:'';
+    width:15rem;
+    height:15rem;
+    background-image: linear-gradient( to right , #1e3c72,#2a5298);
+    border-top:2px solid rgba(255,255,255,.3);
+    border-radius:50%;
+    position:absolute;
+    top:20%;
+    left:20%;
+    box-shadow:inset 5px 5px 10px 2px rgba(255,255,255,.1),
+                5px 5px 10px 2px rgba(0,0,0,.1)
+}
+.container::after{
+    content:'';
+    width:15rem;
+    height:15rem;
+    /* background-image: linear-gradient(#fd746c,#ff9068); */
+    background-image: linear-gradient( to left , #1e3c72,#2a5298);
+
+    border-top:2px solid rgba(255,255,255,.3);
+    border-radius:50%;
+    position:absolute;
+    bottom:20%;
+    right:20%;
+    box-shadow:inset 2px 2px 10px 2px rgba(255,255,255,.1),
+                5px 5px 10px 2px rgba(0,0,0,.1)
+}
+/* to center the inner content */
+.game-console , .row ,.button , .game-over , .game-mode ,.game-starter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+/* game-console section of the game */
+.game-console{
+    width:40%;
+    height:40%;
+    border:2px solid rgba(255,255,255,.3);
+    border-bottom:none;
+    border-right:none;
+    border-radius:10px;
+    backdrop-filter: blur(10px);
+    box-shadow:5px 5px 20px 5px rgba(0,0,0,.1);
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+}
+/* for the full width */
+.game , .game-over,.game-mode,.game-starter{
+    width:100%;
+    height:100%;
+}
+/* game starter section */
+.game-starter{
+    z-index:6;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.game-starter span{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:4rem;
+    font-weight:bolder;
+    letter-spacing:2rem;
+    transition:letter-spacing .3s;
+    color:#ffffc2;   
+}
+.startContent:hover{
+    background-color:rgba(255,255,255,.1);
+}
+.startContent:active{
+    background-color:rgba(255,255,255,.3);
+}
+/* game mode section */
+.game-mode{
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    flex-direction:column;
+    backdrop-filter: blur(15px);
+    /* background-color: rgba(0,0,0,.3); */
+    z-index:4;
+}
+.neuButton {
+    background-color:transparent;
+    outline:none;
+    color:yellow;
+    font-size:3.5rem;
+    font-family:serif;
+    text-transform:capitalize;
+    letter-spacing:.3rem;
+    padding:.5rem 1.4rem;
+    border: 1px solid rgba(255,255,255,.3);
+    border-bottom:none;
+    border-right:none;
+    border-radius:1rem;
+    backdrop-filter:blur(10px);
+    box-shadow:3px 2px 5px 2px rgba(0,0,0,.1),
+                4px 2px 5px 2px rgba(0,0,0,.1),
+                5px 3px 5px 2px rgba(0,0,0,.1),
+                6px 3px 5px 2px rgba(0,0,0,.1);
+    cursor:pointer;
+    user-select: none;
+}
+.neuButton:hover{
+    background-color:rgba(255,255,255,.1);
+}
+.neuButton:active{
+    box-shadow:inset 3px 2px 5px 2px rgba(0,0,0,.1),
+    inset -3px -2px 5px 2px rgba(255,255,255,.1);
+    text-shadow:3px 2px black,
+                4px 2px black,
+                5px 2px black;
+    /* transform:scale(100); */
+}
+.neuButton:focus{
+    outline:none;
+}
+.game-mode .neuButton:nth-child(2){
+    color:greenyellow;
+}
+.game-mode .neuButton:nth-child(3){
+    color:red;
+}
+.game-mode span {
+    margin-bottom:2rem;
+    font-weight:bolder;
+    letter-spacing:1rem;
+    text-shadow:3px 0 black;
+    transition:transform .8s ;
+    background-color:rgba(255,255,255,.1)
+}
+/* game on section */
+.game{
+    opacity:.4;
+    transition:opacity .8s ;
+    z-index:2;
+}
+.game .row{
+    width:100%;
+    height:calc(100%/3);
+}
+.row .button{
+    width:calc(100%/3);
+    height:100%;
+    border:1px solid rgba(255,255,255,.3);
+    font-size:10rem;
+    font-family:'Londrina Solid', cursive;
+    padding-bottom:1.5rem;
+    color:rgba(0,0,0,.8)
+}
+.row .top-left-corner{
+    border-left :none;
+    border-top:none;
+}
+.row .top-right-corner{
+    border-right:none;
+    border-top:none;
+}
+.row .bottom-left-corner{
+    border-left :none;
+    border-bottom:none;
+}
+.row .bottom-right-corner{
+    border-right:none;
+    border-bottom:none;
+}
+.row .button:hover{
+    background-color:rgba(255,255,255,.3)
+}
+.row .button:active{
+    background-color:rgba(0,0,0,.2)
+}
+.row .right-corner {
+    border-right:none;
+}
+.row .middle-bottom{
+    border-bottom:none;
+}
+.row .middle-top{
+    border-top:none;
+}
+.row .left-corner{
+    border-left:none;
+}
+/* game-over section */
+.game-over{
+    position:absolute;
+    flex-direction:column;
+    display:none;
+    transition:display 1s;
+    z-index:3;
+}
+.game-over .winner{
+    padding-bottom:4rem;
+    font-size:10rem;
+    font-family:'Londrina Solid', cursive;
+    letter-spacing:.8rem;
+    color:yellowgreen;
+    filter:drop-shadow(5px 0 0 rgba(0,0,0,.3));
+    opacity:.8;
+}
+.game-over .restart {
+    background-color:transparent;
+    outline:none;
+    font-size:3rem;
+    font-family:'Londrina Solid', cursive;
+    text-transform:capitalize;
+    letter-spacing:.3rem;
+    padding:.5rem 1.4rem;
+    border: 1px solid rgba(255,255,255,.3);
+    border-bottom:none;
+    border-right:none;
+    border-radius:1rem;
+    backdrop-filter:blur(10px);
+    box-shadow:3px 2px 5px 2px rgba(0,0,0,.1);
+}
+.restart:hover{
+    background-color:rgba(255,255,255,.1);
+}
+.restart:active{
+    box-shadow:inset 3px 2px 5px 2px rgba(0,0,0,.1),
+    inset -3px -2px 5px 2px rgba(255,255,255,.1);
+}
+.restart:focus{
+    outline:none;
+}
