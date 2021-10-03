@@ -1,7 +1,7 @@
 height = float(input("Enter your height in meters: "))
 weight = float(input("Enter your Weight in Kg: "))
  
-BMI = w / ( h*h )
+BMI = weight / ( height*height )
 
 print("BMI Calculated is:  ",round(BMI,2))
  
