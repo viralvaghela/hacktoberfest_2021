@@ -1,0 +1,302 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game</title>
+    <link rel="stylesheet" href="index.css">
+  <style>
+  *{
+    font-family: "Lato", sans-serif;
+    background-color: #57BD91;
+    color: #FFFFFF;
+    /* font-size: 28px; */
+}
+
+
+.main{
+    /* margin: auto; */
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    font-size: 28px;
+     margin-top: 50px;
+}
+.main h1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 48px;
+}
+form{
+    font-size: 30px;
+    /* margin: 30px; */
+}
+form input:focus, textarea:focus, select:focus button:focus{
+    outline: none;
+}
+form input[type=text]{
+    border-width:0px;
+border:none;
+text-align: center;
+    border-bottom: 2px solid white;
+    color: black;
+    font-size: 30px;
+}
+
+#scrambled{
+    /* color: #ffffff; */
+   font-size: 40px;
+   font-family: monospace;
+   color: black;
+    /* text-align: center; */
+    margin: auto;
+    display:table;
+   
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+form #check  {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid white;
+    font-size: 24px;
+    border-radius: 30px;
+    color: black;
+}
+form #check:hover{
+    background-color: white;
+    
+}
+#signal{
+    text-align: center;
+}
+#green , #red{
+    /* text-align: center; */
+    margin: auto;
+    height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+    
+}
+#below{
+    text-align: center;
+}
+
+/* #green{
+    background-color: greenyellow;
+}
+#red{
+    background-color: red;
+} */
+
+#reload{
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid white;
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+#reload:hover{
+    background-color: yellow;
+}
+  </style>
+</head>
+<body>
+    <div id="upper">
+        <div class="main">
+            <h1>Word Game</h1>
+            <div>
+                Unscramble these letters to form an animal: 
+            </div>
+            <br>
+            <form action="" id="game">
+                <label for="">
+                    <span id="scrambled">word</span>
+                    <br>
+                </label>
+                <br>
+                <input type="text" size="20">
+                <button type="submit" id="check">Check</button>
+                <br>
+                <div id="signal">
+                    <span id="green"></span>
+                <span id="red"></span>
+                </div>
+                    <br>
+                <div id="below">
+                    <span style="text-align: center;">
+                    
+                        Score : <span id="score">0</span>
+                    </span>
+                    <br>
+                    <span id="msg">welcome</span>
+                    <br>
+                    
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      var animals=["lion","tiger","panda","fox","elephant","chimpanzee","hippopotamus","buffalo","camel","turtle","cockroach","penguin","butterfly","scorpion","squirrel","goldfish","dolphin","crocodile","gorilla","kangaroo","whale","shark","bear","monkey","snake","donkey","giraffe","anteater",""];
+var checked=[];
+// alert(animals.length);
+var lost=false;
+var word;
+
+// $("#sample").submit(function(){
+//     alert("ready")
+//     $(".main").empty();
+//     var s= "<div class =\"heading\"><h1>Word game</h1><p>Unscramble the word and find the correct word</p></div><form id=\"game\"><label for=\"\"><span id=\"scrambled\">Word</span><br><br><input type=\"text\" size=\"20\" ></label><button type=\"submit\" id=\"check\">Check</button><span ><br> <br>Score : <span id=\"score\">0</span></span><span id=\"msg\"></span></form>;  ";
+//     $(".main").html(s);
+//     // repeat();
+//     console.log("func called")
+// });
+repeat();
+$("#game").submit(function(event){
+    event.preventDefault();
+    var inp=$("input").val().toLowerCase();
+    // var sc=$("#scrambled").text().toLowerCase();
+    // console.log(inp);
+// console.log(word);
+    // console.log(sc);
+    if (inp == word.toLowerCase()){
+        var sc= parseInt($("#score").text());
+        // console.log("success");
+        // console.log(sc)
+        // setTimeout(function(){},5000);
+        sc+=1
+        $("#score").text(sc);
+        $("#green").css("background-color","greenyellow");
+        $("#msg").text("Great ! you are doing a good job");
+        setTimeout(function(){
+            $("#green").css("background-color","#bbb");
+        },500);
+        $("input").val("");
+        repeat();
+    }
+    else
+    {
+        // alert("error");
+        $("#red").css("background-color","red");
+        // setTimeout(function(){
+        //     $("#green").css("background-color","#bbb");
+        // },2000)
+        // $("#score").text("0");
+        $("input").val("");
+        $("#scrambled").text(" It is : "+ word);
+        $("#msg").text("Better luck next time !!");
+        $("#below").append("<button onClick=\"window.location.reload();\" id=\"reload\">Restart game</button>");
+        lost=true;
+        // gotostart();
+    }
+});
+
+// $("#reload").on("click",function(){
+//     lost=false;
+//     location.reload(true);
+//     repeat();
+//     // $("#reload").empty()
+// })
+
+
+function generateword(){
+    var rd=genratenumber();
+    // console.log(rd);
+    
+     word=animals[rd];
+   
+    // if(animals.indexOf(word)==-1)
+    
+        var scrmb = scrambled(word);
+    // console.log(scrmb);
+    $("#scrambled").text(scrmb);
+   
+}
+
+
+
+function genratenumber(){
+    var r= Math.floor(Math.random() * animals.length);
+    // if(checked.indexOf(r)!=-1 && checked.length!=0 && checked.length!=animals.length)
+    // {
+    //     var r= genratenumber(); 
+    //     return r;
+    // }
+    // else if(checked.length === animals.length){
+    //     console.log(animals.length,checked.length);
+    //     checked=[];
+    //     console.log(checked);
+        
+    // }
+    // else{
+        while(checked.length != animals.length){
+
+        if(checked.indexOf(r)!=-1)
+        {
+            r= Math.floor(Math.random() * animals.length);
+        }
+        else{
+            break;
+        }
+        }
+            if(checked.length == animals.length)
+            {
+                checked=[];
+            }
+    // else{
+    //     checked=[];
+    // }
+        checked.push(r);
+        return r;
+    // }
+   
+}
+
+// $(document).ready(function(){
+//     if(!lost){
+        
+//     }
+   
+// });
+
+function repeat(){
+    if(!lost){
+        generateword();
+    }
+}
+
+
+function scrambled(word){
+    var a = word.split(""),
+        n = a.length;
+
+    for(var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    if (a.join("")==word){
+        generateword();
+    }
+    else{
+        return a.join("");
+    }
+    
+}
+
+
+
+
+  </script>
+</body>
+</html>
