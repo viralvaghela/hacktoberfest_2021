@@ -1,4 +1,4 @@
-package com.company;
+// package com.company;
 
 class MyHash
 {
@@ -68,7 +68,7 @@ class MyHash
     }
 }
 
-public class Main
+class Main // access specifier not required
 {
     public static void main(String[] args)
     {

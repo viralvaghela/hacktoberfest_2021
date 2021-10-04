@@ -1,4 +1,4 @@
-import java.io.CharConversionException;
+// import java.io.CharConversionException; it is never used
 import java.util.ArrayList;
 
 public class FindDuplicates {
