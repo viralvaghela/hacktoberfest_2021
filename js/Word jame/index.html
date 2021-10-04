@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="upper">
+        <div class="main">
+            <h1>Word Game</h1>
+            <div>
+                Unscramble these letters to form an animal: 
+            </div>
+            <br>
+            <form action="" id="game">
+                <label for="">
+                    <span id="scrambled">word</span>
+                    <br>
+                </label>
+                <br>
+                <input type="text" size="20">
+                <button type="submit" id="check">Check</button>
+                <br>
+                <div id="signal">
+                    <span id="green"></span>
+                <span id="red"></span>
+                </div>
+                    <br>
+                <div id="below">
+                    <span style="text-align: center;">
+                    
+                        Score : <span id="score">0</span>
+                    </span>
+                    <br>
+                    <span id="msg">welcome</span>
+                    <br>
+                    
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
