@@ -1,3 +1,0 @@
-#### Screenshot
-
-![Screenshot](img.jpg)
