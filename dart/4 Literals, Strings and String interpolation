@@ -1,0 +1,39 @@
+
+void main(){
+  
+  //Literals
+  true;
+  2;
+  
+  //Various ways to declare String Literals
+  String s1 = 'Single';
+  String s2 = "Double";
+  String s3 = 'It\'s easy';
+  String s4 = "It's easy";
+  String s5 = 'This is a very long string.'
+    ' The string statement is going out of margin. We can break the string into parts.'
+    ' So that the String would not go out of screen.';
+  print (s5);
+    
+    
+  //String Interpolation
+  String name = "Sahana";
+  String surname = 'Lingayya';
+  String message = "My name is "+name;
+  //Using String Interpolation
+  String new_message = "My name is $name $surname. I am from Byndoor. From $message ";
+  
+  print("The number of characters in the String is "+name.length.toString());
+  //USing String Interpolation
+  print("The no. of characters in String surname are ${surname.length}");
+  print(message);
+  print(new_message);
+  
+  int l =10;
+  int b=20;
+  
+  print("The sum of $l and $b is ${l+b}");
+  print("The area of rectangle with length $l and breadth $b is ${l*b}");
+   
+  
+}
