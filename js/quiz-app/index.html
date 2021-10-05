@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="codinghomo">
+    <meta name="description" content="web page for the quiz">
+    <link rel="stylesheet" href="style.css">
+    <title>quizApp</title>
+</head>
+<body>
+    <main class="container">
+        <section class="quizPart">
+            <div class="game">
+                <div class="quizQuestion quiz">
+                    <h1>question:</h1>
+                    <span>Most wealthiest person in the world ?</span>
+                </div>
+                <div class="quizAnswers quiz">
+                    <h1>answers:</h1>
+                    <input type="radio" name="answer" id="ans1" value="ans1">
+                    <label class ="answer"for="ans1" id="ans1">Bill gates</label><br>
+                    <input type="radio" name="answer" id="ans2" value="ans2">
+                    <label class ="answer"for="ans2" id="ans2">Elon musk</label><br>
+                    <input type="radio" name="answer" id="ans3" value="ans3">
+                    <label class ="answer"for="ans3" id="ans3">Jef besos</label><br>
+                    <input type="radio" name="answer" id="ans4" value="ans4">
+                    <label class ="answer"for="ans4" id="ans4">sundhar biche</label><br>
+                    <button type="submit" class="button">next</button>
+                </div>
+            </div>
+            <div class="gameOver">
+                <h1>GameOver</h1>
+                <p>correct <span class="correct">2</span></p>
+                <p>wrong <span class="wrong">1</span></p>
+                <button class="button restart">Restart</button>
+            </div>
+        </section>
+    </main>
+    <span class="circle"></span>
+    <script src="script.js"></script>
+</body>
+</html>
