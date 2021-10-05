@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="main">
+    <div id="main_intro">
+        <h1>This is a simple calculator</h1>
+        <p>This calculator can perform addition, subtraction, multiplication and division of integer numbers</p>
+    </div>
+    <div class="container">
+        <div id="history">
+            <p id="history_val"></p>
+        </div>
+        <div id="result">
+            <p id="result_val"></p>
+        </div>
+        <div class="row">
+            <button type="button" id="clear" class="btn btn-light col operator">C</button>
+            <button type="button" id="remove" class="btn btn-light col operator">&#x2190;</button>
+        </div>
+        <div class="row">
+            <button type="button" id="+" class="btn btn-light col operator">+</button>
+            <button type="button" id="-" class="btn btn-light col operator">-</button>
+            <button type="button" id="*" class="btn btn-light col operator">*</button>
+            <button type="button" id="/" class="btn btn-light col operator">/</button>
+        </div>
+        <div class="row">
+            <button type="button" id="1" class="btn btn-light col num">1</button>
+            <button type="button" id="2" class="btn btn-light col num">2</button>
+            <button type="button" id="3" class="btn btn-light col num">3</button>
+        </div>
+        <div class="row">
+            <button type="button" id="4" class="btn btn-light col num">4</button>
+            <button type="button" id="5" class="btn btn-light col num">5</button>
+            <button type="button" id="6" class="btn btn-light col num">6</button>
+        </div>
+        <div class="row">
+            <button type="button" id="7" class="btn btn-light col num">7</button>
+            <button type="button" id="8" class="btn btn-light col num">8</button>
+            <button type="button" id="9" class="btn btn-light col num">9</button>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-light col" disabled></button>
+            <button type="button" id="0" class="btn btn-light col num">0</button>
+            <button type="button" id="=" class="btn btn-light col operator">=</button>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <p>Made by Zhansaya Maksut</p>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
