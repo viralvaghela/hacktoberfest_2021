@@ -1,0 +1,45 @@
+body{
+    background: url(https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-size: 100%;
+}
+#clocks {
+     margin: auto;
+    position: relative; 
+    background-color: red;
+    border: 10px rgb(38, 0, 255);
+    height: 40vw;
+    width: 40vw;
+    background: url(5054.png) no-repeat;
+    background-size: 100%; 
+}
+
+ #hour,
+#min,
+#sec{
+    position: absolute;
+    background-color: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+
+#hour{  
+    width: 1%;
+    height: 25%;
+    top: 25%;
+    left: 49.35%;
+    
+}
+#min{  
+    width: 0.7%;
+    height: 30%;
+    top: 20%;
+    left: 49.55%;
+    
+}
+#sec{  
+    width: 0.5%;
+    height: 35%;
+    top: 15%;
+    left: 49.65%;
+}
+

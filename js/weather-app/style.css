@@ -28,6 +28,10 @@ body{
     color: black;
     
 }
+#search:hover {
+        background-color:#3C83E1;
+        border-color: red;
+      }
 ::placeholder{
     color: black;
     opacity: 0.5;

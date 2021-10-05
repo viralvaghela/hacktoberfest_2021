@@ -1,0 +1,222 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family:var(--fnt-cnt);
+}
+:root{
+    /*for making the app responsive size in each screen size */
+    font-size:2vw;
+    /*veriables for doing optimized code*/
+    --fnt-cnt:monospace;
+    --fnt-tlt:'Times New Roman', Times, serif;
+
+}
+body{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+/* entire code is under this sectionk */
+.container{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:aquamarine;
+    position:relative;
+}
+/*design elements for the web */
+.circle{
+    content: "";
+    width:30rem;
+    height:30rem;
+    position:absolute;
+    right:0;
+    top:0;
+    transform:translate(50%,-50%);
+    border:2rem solid white;
+    border-radius:50%;
+    z-index:1;
+
+}
+.container::after{
+    content:'';
+    width:8rem;
+    height:8rem;
+    background-image:linear-gradient(to right ,#020024 0% , #096d79 67% , #00d4ff 100%);
+    position:absolute;
+    background-color:#00d4ff;
+    border-radius:50%;
+    z-index:0;
+    left:65%;
+    top:60%;
+    opacity:.8;
+
+}
+.container::before{
+    content:'';
+    width:8rem;
+    height:8rem;
+    background-image:linear-gradient(to right ,#020024 0% , #096d79 67% , #00d4ff 100%);
+    position:absolute;
+    background-color:#00d4ff;
+    border-radius:50%;
+    z-index:0;
+    left:20%;
+    top:20%;
+    opacity:.8;
+
+}
+/*quiz section */
+.quizPart{
+    padding:2rem;
+    border-radius:10px;
+    border:2px solid rgba(0,0,0,.1);
+    border-right:none;
+    border-bottom:none;
+    backdrop-filter:blur(5px);
+    box-shadow:10px 5px 10px 2px rgba(0,0,0,.2);
+    z-index:3;
+    background-color:rgba(255,255,255,.1);
+    width:25rem;
+    height:20rem;
+    overflow:hidden;
+}
+/*common code for the questions and answer section */
+.quiz h1{
+    font-family:var(--fnt-tlt);
+    text-transform:capitalize;
+    margin-bottom:.5rem;
+}
+.game{
+    display:block;
+}
+/* question part of the web */
+.quizQuestion{
+    margin-bottom:1rem;
+}
+/*answer part of the web */
+.quizAnswers button{
+    margin:0 50%;
+    transform:translateX(-50%);
+    font-size:1.1rem;
+    margin-top:1.5rem;
+    border:3px solid rgba(255,255,255,.5);
+    background-color:transparent;
+    padding:.5rem .8rem;
+    border-radius:10px;
+    transition: background-color .5s ,letter-spacing .5s .5s;
+
+}
+.quizAnswers button:hover{
+    background-color:white;
+    letter-spacing:.2rem;
+    transition: background-color .5s .5s,letter-spacing .5s ;
+}
+.quizAnswers button:focus{
+    border:none;
+    outline:none;
+}
+/* gameOver section */
+.gameOver{
+    width:100%;
+    height:100%;
+    display:none;
+    place-items:center;
+    transform: translateX(100%);
+    transition:transform .5s ease-in-out;
+}
+.gameOver h1{
+    font-size:2rem;
+    margin-bottom:1rem;
+    font-family:var(--fnt-tlt);
+}
+.gameOver p{
+    font-size:1.5rem;
+    font-family:var(--fnt-cnt);
+    text-align:left;
+}
+.gameOver p span{
+    margin-left:.3rem;
+    padding:.1rem .8rem;
+    background-color:rgba(5, 58, 231, .3);
+    box-shadow:0 0 5px 2px rgba(255,255,255,.2);
+    border-radius:4px;
+}
+.correct{
+    background-color:rgba(46, 230, 9,.3) !important ;
+}
+.wrong{
+    background-color:rgba(216, 10, 10,.3) !important ;
+}
+.button{
+    margin:0 50%;
+    transform:translateX(-50%);
+    font-size:1.1rem;
+    margin-top:1.5rem;
+    border:3px solid rgba(255,255,255,.5);
+    background-color:transparent;
+    padding:.5rem .8rem;
+    border-radius:10px;
+    transition: background-color .5s ,letter-spacing .5s .5s;
+
+}
+.restart {
+    transform:translateX(0);
+}
+.button:hover{
+    background-color:white;
+    letter-spacing:.2rem;
+    transition: background-color .5s .5s,letter-spacing .5s ;
+}
+.button:focus{
+    border:none;
+    outline:none;
+}
+/* media queries for the responsive front-end */
+@media (max-width:750px){
+    :root{
+        font-size:2.5vw;
+    }
+    .container::before{
+        left:13%;
+    }
+}
+@media (max-width:600px){
+    :root{
+        font-size:2.8vw;
+    }
+    .container::before{
+        top:25%;
+    }
+}
+@media (max-width:400px){
+    :root{
+        font-size:3.5vw;
+    }
+    .container::before{
+        left:1%;
+        top:23%;
+    }
+    .container::after{
+        left:71%;
+        top:65%;
+    }
+    .quizPart{
+        height:28rem;
+    }
+    .quiz h1{
+        margin-bottom:1.5rem;
+        letter-spacing:.2rem;
+        font-size:2rem;
+    }
+    .answer, .quizQuestion span{
+        font-size:1.5rem;
+    }
+    .button{
+        font-size:1.5rem !important;
+    }
+}
