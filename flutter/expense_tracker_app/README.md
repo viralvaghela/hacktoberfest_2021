@@ -36,7 +36,17 @@ flutter packages pub run --no-sound-null-safety build_runner build
 
 ## Screenshots
 
+<p>
 
+</p>
+<p>
+<img src="screenshots/sc_1.jpg" alt="Splash View" width="200">
+<img src="screenshots/sc_2.jpg" alt="Splash View" width="200">
+<img src="screenshots/sc_3.jpg" alt="Splash View" width="200">
+<img src="screenshots/sc_4.jpg" alt="Splash View" width="200">
+<img src="screenshots/sc_5.jpg" alt="Splash View" width="200">
+<img src="screenshots/sc_6.jpg" alt="Splash View" width="200">
+</p>
 
 
 
