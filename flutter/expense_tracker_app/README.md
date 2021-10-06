@@ -26,8 +26,8 @@ A detailed guide for multiple platforms setup could be find [here](https://flutt
 
 ### Setup Project
 
-- Clone this repository using `git clone https://github.com/RohanSengupta326/flutter-examples.git`.
-- `cd` into `mealsApp`.
+- Clone this repository using `git clone git@github.com:viralvaghela/hacktoberfest_2021.git`.
+- `cd` into `flutter/expense_tracker_app`.
 - `flutter pub get` to get all the dependencies.
 - Generate files using Builder Runner (**required**) 
 ```
