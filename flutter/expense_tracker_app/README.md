@@ -1,6 +1,6 @@
 # Flutter Expense Tracker
 
-#### My First Flutter Dummy Project. It is an Expense Tracker. It takes amount and item name as inputs and show you a list of items that you have spent your money on and a chart where you can see your weekly spendings. You can also delete a particular item and add unlimited number of items. I have made it adaptive and responsive for IOS and Android devices in any screen size and shape and orientation(Landscape or Portrait).
+My First Flutter Dummy Project. It is an Expense Tracker. It takes amount and item name as inputs and show you a list of items that you have spent your money on and a chart where you can see your weekly spendings. You can also delete a particular item and add unlimited number of items. I have made it adaptive and responsive for IOS and Android devices in any screen size and shape and orientation(Landscape or Portrait).
 
 
 ## How to setup on your system :- 
