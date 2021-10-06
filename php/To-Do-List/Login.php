@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <!--Login Script -->
 <html lang="en">
@@ -10,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-    <title>SignUp To P_Notes</title>
+    <title>Login To P_Notes</title>
     <link rel="shortcut icon" href="Site.png" type="image/x-icon">
   </head>
   <body>
@@ -34,20 +37,20 @@
     <h2 id="Login" >Login To Get Started</h2>
     <br>
     <div class="container">
-    <form>
+    <form action="Login.php" method="POST">
+    <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Your Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+    </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-    </div>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+          </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
@@ -55,5 +58,57 @@
   </body>
 </html>
 <?php
-    
+
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $server="localhost";
+        $user="root";
+        $pass="";
+        $db="to_do";
+        // $_SESSION['email']=$_POST['username'];
+        $conn=mysqli_connect($server, $user, $pass, $db);
+
+        if(!$conn){
+          echo mysqli_connect_error();
+        }
+        $email=$_POST['email'];
+        $pass=$_POST['password'];
+        $name=$_POST['username'];
+       
+        $show=false;
+        $login=false;
+
+        $select="SELECT * FROM `sign up table`";
+        $exe=mysqli_query($conn, $select);
+
+        $row=mysqli_num_rows($exe);
+        // echo $row;
+
+        if($row>0){
+          while($rows=mysqli_fetch_assoc($exe)){
+            if($rows['email']==$email){
+             $login=true;
+             $_SESSION['username']=$name;
+            }
+            else{
+              $show=true;
+            }
+          }
+       
+        }
+        
+          if($login){
+
+            header("location: Notes.php");
+
+          }
+            else if($show)
+            {
+              echo "<br>";
+              echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error!</strong> Your Credentials Do Not Match.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+           }
+            
+    }
 ?>
