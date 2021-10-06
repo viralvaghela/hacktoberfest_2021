@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#3A575E"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:id="@+id/flag"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            >
+        </ImageView>
+        <TextView
+            android:id="@+id/namec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Country name"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="130dp"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical">
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
