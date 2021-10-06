@@ -16,6 +16,28 @@
 2. How to setup the emulator on android studio : https://developer.android.com/studio/run/emulator 
 3. or, connect a physical device : https://stackoverflow.com/questions/54444538/how-do-i-run-test-my-flutter-app-on-a-real-device
 
+## Getting Started
+
+Follow these instructions to build and run the project
+
+### Setup Flutter
+
+A detailed guide for multiple platforms setup could be find [here](https://flutter.dev/docs/get-started/install/)
+
+### Setup Project
+
+- Clone this repository using `git clone https://github.com/RohanSengupta326/flutter-examples.git`.
+- `cd` into `mealsApp`.
+- `flutter pub get` to get all the dependencies.
+- Generate files using Builder Runner (**required**) 
+```
+flutter packages pub run --no-sound-null-safety build_runner build
+```
+
+## Screenshots
+
+
+
 
 
 
