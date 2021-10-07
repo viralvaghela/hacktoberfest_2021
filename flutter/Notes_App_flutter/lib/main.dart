@@ -11,10 +11,14 @@ import 'package:notes_flutter/bloc/ThemeBloc/ThemeEvent.dart';
 import 'package:notes_flutter/bloc/ThemeBloc/ThemeState.dart';
 
 import 'model/Notes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await LocalDatabase.initilizeDatabase();
+  final bool isDark =
+      (await SharedPreferences.getInstance()).getBool("isDark") ?? false;
+
   LocalDatabase.addNoteToDatabase(Note(
       "This is note1", "This is note 1 content.............",
       color: 0, id: 1));
@@ -29,13 +33,15 @@ Future<void> main() async {
   LocalDatabase.addNoteToDatabase(
       Note("This is note5", "This is note 5 content", color: 4, id: 5));
 
-  runApp(MyApp());
+  runApp(MyApp(isDark));
 }
 
 class MyApp extends StatelessWidget {
+  MyApp(this.isDark);
+  final bool isDark;
   @override
   Widget build(BuildContext context) {
-    ThemeBloc bloc = ThemeBloc()..eventSink.add(ChangeTheme(false));
+    ThemeBloc bloc = ThemeBloc()..eventSink.add(ChangeTheme(isDark));
     return BlocProvider<ThemeBloc>(
       bloc: bloc,
       child: BlocProvider<NoteActionBloc>(
