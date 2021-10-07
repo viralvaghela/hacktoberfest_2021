@@ -1,0 +1,74 @@
+{
+  "Music": [
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Qaafirana.jpg",
+      "artist": "Amit Trivedi, Arijit Singh & Nikhita Gandhi",
+      "songName": "Qaafirana",
+      "musicUrl": "http://hindi4.frkmusic.xyz/s/Qaafirana%20(From%20'Kedarnath').mp3",
+      "id": 1
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Aabaad-Barbaad-From-Ludo.jpg",
+      "artist": "Pritam & Arijit Singh",
+      "songName": "Aabaad Barbaad",
+      "musicUrl": "http://hindi7.frkmusic.xyz/s/01%20Aabaad%20Barbaad%20(From%20_Ludo_).mp3",
+      "id": 2
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Tujhe-Kitna-Chahne-Lage.jpg",
+      "artist": "Arijit Singh",
+      "songName": "Tujhe Kitna Chahne Lage",
+      "musicUrl": "http://hindi5.frkmusic.xyz/s/Tujhe%20Kitna%20Chahne%20Lage%20(From%20'Kabir%20Singh').mp3",
+      "id": 3
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Ek-Villain-0.jpg",
+      "artist": "Arijit Singh",
+      "songName": "Humdard",
+      "musicUrl": "http://hindi4.frkmusic.xyz/a/ek-villain/05%20Humdard.mp3",
+      "id": 4
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Shayad-From-Love-Aaj-Kal.jpg",
+      "artist": "Arijit Singh",
+      "songName": "Shayad",
+      "musicUrl": "http://hindi6.frkmusic.xyz/s/Shayad%20(From%20'Love%20Aaj%20Kal').mp3",
+      "id": 5
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Tu-Hi-Yaar-Mera.jpg",
+      "artist": "Rochak, Arijit Singh, Neha Kakkar & Rochak Kohli",
+      "songName": "Tu Hi Yaar Mera ",
+      "musicUrl": "http://hindi6.frkmusic.xyz/s/Tu%20Hi%20Yaar%20Mera%20(From%20'Pati%20Patni%20Aur%20Woh').mp3",
+      "id": 6
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Chhichhore.jpg",
+      "artist": "Arijit Singh",
+      "songName": "Khairiyat",
+      "musicUrl": "http://hindi5.frkmusic.xyz/a/chhichhore/06%20Khairiyat%20(Happy).mp3",
+      "id": 7
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Ae-Dil-Hai-Mushkil-DE.jpg",
+      "artist": "Arijit Singh",
+      "songName": "Ae Dil Hai Mushkil",
+      "musicUrl": "http://hindi3.frkmusic.xyz/a/adhm/01%20Ae%20Dil%20Hai%20Mushkil%20(Title%20Track).mp3",
+      "id": 8
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/Karwaan-0.jpg",
+      "artist": "Arijit Singh",
+      "songName": "Chota Sa Fasana",
+      "musicUrl": "http://hindi3.frkmusic.xyz/a/karwaan/01%20Chota%20Sa%20Fasana.mp3",
+      "id": 9
+    },
+    {
+      "imageUrl": "https://www.frkmusic.site/wp-content/uploads/1921-0.jpg",
+      "artist": "Arijit Singh",
+      "songName": "Tere Bina",
+      "musicUrl": "http://hindi.frkmusic.xyz/a/1921/04%20Tere%20Bina.mp3",
+      "id": 10
+    }
+  ]
+}

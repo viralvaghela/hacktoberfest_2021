@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- meta data about the web  -->
+    <meta name="author" content="codinghomo">
+    <meta name="describtion" content="tictactoeGame">
+    <title>tictactoeGame</title>
+</head>
+<body>
+    <main class="container">
+        <section class="game-console">
+            <div class="game-mode">
+                <span class="neuButton ">easy</span>
+                <span class="neuButton ">medium</span>
+                <span class="neuButton ">hard</span>
+            </div>
+            <div class="game">
+                <!-- section to be displayed when the game is on -->
+                <div class="top-row row">
+                    <span class="button top-left-corner " id="column0" ></span>
+                    <span class="button  middle-top " id="column1"></span>
+                    <span class="button top-right-corner " id="column2"></span>
+                </div>
+                <div class="middle-row row">
+                    <span class="button  left-corner" id="column3"></span>
+                    <span class="button " id="column4"></span>
+                    <span class="button  right-corner" id="column5"></span>
+                </div>
+                <div class="bottom-row row">
+                    <span class="button bottom-left-corner " id="column6"></span>
+                    <span class="button  middle-bottom" id="column7"></span>
+                    <span class="button bottom-right-corner " id="column8"></span>
+                </div>
+            </div>
+            <div class="game-over">
+                <!-- section to be displayed when the game is over -->
+                <span class="winner">won</span>
+                <button class="restart ">restart</button>
+            </div>
+            <!-- game starter section  -->
+            <div class="game-starter" onclick="gameStarter(event)">
+                <span class="startContent">start</span>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

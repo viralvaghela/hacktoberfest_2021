@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h1>Stopwatch</h1>
+        <p class="time">00 : 00.0</p>
+        <div class="buttons">
+            <button id="start" onclick="this.disabled=true;calltimer()">Start</button>
+            <button id="stop" onclick="stoptimer()">Stop</button>
+            <button id="clear" onclick="cleartimer()">Clear</button>
+        </div>
+    </div>
+    <footer>
+        <div class = "footer-text">
+            <p class = "text">&copy;Developed By Chanu</p>
+          </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
