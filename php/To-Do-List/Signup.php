@@ -88,12 +88,12 @@
                         $showalert=false;
                         // echo "Rows ===  ".$row;
                         if($row>0){
-                            if($rows=mysqli_fetch_assoc($comparing)){
-                                while($email==$rows['email']){
+                           while($rows=mysqli_fetch_assoc($comparing)){
+                                if($rows['email']==$email){
                                     $showalert=true;
                                 }
                             }
-                            else{
+                           
                                 if($showalert==true){
                                 echo"<br>";
                                     echo '<div class=" my-1 alert alert-danger alert-dismissible fade show" role="alert">
@@ -106,7 +106,7 @@
                   
                     // Comparing Both The Passwords 
                     // pass and Confirm Pass
-                        if($password==$cpass){
+                        if($password==$cpass && $showalert==false){
 
                                     $phash=password_hash($password, PASSWORD_DEFAULT);
                                     $cphash=password_hash($cpass, PASSWORD_DEFAULT);
@@ -119,7 +119,7 @@
                                         {
                                                     echo"<br>";
                                                     echo '<div class=" my-1 alert alert-success alert-dismissible fade show" role="alert">
-                                                    <strong>Congrats</strong>You Have Been Registered Successfully
+                                                    <strong>Congrats</strong>You Have Been Registered Successfully Now Go Back To The Login Page
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>';
                                         }
@@ -134,5 +134,5 @@
                           }
                          
                  }
-        }    }               
+        }                   
 ?>
