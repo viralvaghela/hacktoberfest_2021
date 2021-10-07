@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            
+            font-family: "Segoe UI";
+            scroll-behavior: smooth;
+          }
+          .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .row{
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        [class*="col-"] {
+            float: left;
+        }
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        body{
+            margin: 0;
+            padding: 0;
+            color: azure;
+            background-color: #2D524D;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+          .landing{
+              background-image: url("./pexels-negative-space-92904.jpg");
+              background-size: cover;
+              height: 100vh;
+          }
+        nav{
+            z-index: 1;
+          position: fixed; /* Set the navbar to fixed position */
+          top: 0; /* Position the navbar at the top of the page */
+          width: 100%;
+        }
+        .nav-body {
+            border-radius: 20px;
+            padding: 10px 10px 0px 10px;
+            font-size: 1.25em;
+            margin-left: 10%;
+            background-color: #00433A;
+            margin-right: 10%;
+          }
+          .nav-logo {
+            display: inline-block;
+            padding:0% ;
+            margin-left: 5%;
+          }
+          .nav-link {
+            display: inline-block;
+            padding: 0px 10px;
+          }
+          .nav-link > a {
+            text-decoration: none;
+            color: azure;
+          }
+          .nav-items {
+            display:block;
+            float: right;
+            margin-right: 5%;
+          }
+        #abimg{
+            border-radius: 50%;
+        }
+        .about{
+            margin:5% 10%;
+        }
+        #course{
+          margin: 2% 10%;
+        }
+        #create{
+            height: 100%;
+        }
+        #course{
+            height: 100%;
+        }
+        #tex{
+            color: black;
+            background-color: rgba(255, 255, 255, 0.582);
+            font-size: 2em;
+            font-weight: bold;
+            position: absolute;
+            left: 30%;
+            top: 40%;
+        }
+        .card{
+          border: 1px black solid;
+          width: 250px;
+          box-shadow:2px black;
+          padding: 5px 20px;
+          background-color: maroon;
+          border-radius: 24px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .card:hover{
+          background-color: rgba(202, 64, 64, 0.87);
+        }
+        
+        a{
+          text-decoration: none;
+            color: azure;
+        }
+        .footer{
+            margin-top: auto;
+            display: flex;
+            padding: 10px 20px;
+            background-color: grey;
+        }
+        .foot-cols{
+          display: inline-block;
+          padding: 10px 60px;
+        }
+        #clock{
+          align-self: center;
+          font-size: 3em;
+          margin: 10px;
+          padding: 5px;
+          border: black 4px solid;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="landing" id="home">
+        <nav>
+            <div class="nav-body">
+                <div class="nav-logo">
+                    <a href="#home"><img src="15465856831547464152.svg" width="40px"></a>
+                </div>
+                <div class="nav-items">
+                    <div class="nav-link"><a href="#course">COURSES</a></div>
+                    <div class="nav-link"><a href="#create">CREATOR</a></div>
+                    <div class="nav-link"><a href="#cont">CONTACT</a></div>
+                    <div class="nav-link"><a href="#">SIGNUP </a></div>
+                    <div class="nav-link"><a href="#">LOGIN  </a></div>
+                </div>
+            </div>
+        </nav>
+        <div id="tex">
+            Are you ready to dive into the world of Coding?
+        </div>
+        <script src="main.js"></script>
+    </div>
+    <div id="course">
+        <div class="row">
+            <div class="col-6"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus omnis dolorem recusandae, ab maxime, natus exercitationem laborum error laboriosam cumque quidem? Omnis in reiciendis illo. Quos laboriosam quam tempora harum?
+            Placeat voluptatum consequuntur blanditiis soluta amet ex esse laboriosam exercitationem deserunt et quasi aliquid veritatis aspernatur, facilis tempore ab dolor minima suscipit magni commodi. Tempore tenetur neque obcaecati maiores illum!</p></div>
+            <div class="col-6">
+                <div class="card">
+                    <h3>Web Dev</h3>
+                    <ul>
+                        <li>Html/Css/JS</li>
+                        <li>Git</li>
+                        <li>Node, Express, Mongo</li>
+                        <li>Django/Flask</li>
+                        <li>React/Angular</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <h3>App Dev</h3>
+                    <ul>
+                        <li>Java/Kotlin</li>
+                        <li>Flutter</li>
+                        <li>Firebase</li>
+                        <li>Swift for ios</li>
+                        <li>React Native</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum atque, provident unde deserunt dolore molestiae consequuntur aspernatur eligendi eveniet cum libero quas quisquam saepe dolor dicta consectetur in nostrum repellat?
+            Modi voluptatem placeat architecto, odit recusandae culpa dicta sunt dolorum ad eveniet omnis minus at officiis! A tempora nobis nihil reiciendis repellat maxime sed totam, ratione corporis assumenda adipisci neque.</p></div>
+        </div>
+        <div class="row">
+            <div class="col-6"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptate et culpa molestiae ex officiis natus provident veniam est, molestias aliquid, quibusdam, velit labore sed aperiam sit voluptatum suscipit impedit.
+            Vel earum eum, voluptate expedita asperiores veniam culpa hic corporis magnam dolores eligendi provident consectetur voluptas, enim tempore alias? Dignissimos cupiditate dicta ratione quis pariatur sequi. Ratione inventore quidem voluptatibus?</p></div>
+            <div class="col-6">
+                <div class="card">
+                    <h3>ML</h3>
+                    <ul>
+                        <li>Python and Libraries</li>
+                        <li>Regression</li>
+                        <li>KNN</li>
+                        <li>Neural Networks</li>
+                        <li>Web Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <h3>Competitive</h3>
+                    <ul>
+                        <li>DSA</li>
+                        <li>C</li>
+                        <li>C++ and STL</li>
+                        <li>Java and Classes</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident laborum voluptate rerum blanditiis, officiis ad. Sint error exercitationem, voluptatum voluptatibus pariatur saepe nostrum placeat eius commodi ipsam. Velit, libero reprehenderit?
+            Magnam libero quidem fugit nobis, enim, natus maiores, quae omnis dignissimos vitae facere dicta consequuntur ad quisquam non? Voluptas minus cumque at laboriosam perspiciatis veritatis repudiandae aliquid amet provident doloremque.</p></div>
+        </div>
+    </div>
+<div id="clock">
+    00:00:00
+</div>
+<script>
+    function showTime(){
+    
+        var date = new Date();
+        var h= date.getHours();
+        var m= date.getMinutes();
+        var s= date.getSeconds();
+    
+        if(h<10){
+            h="0"+h;
+        }
+        if(m<10){
+            m="0"+m;
+        }
+        if(s<10){
+            s="0"+s;
+        }
+        var clk = document.getElementById("clock");
+        var time= h+":"+m+":"+s;
+        clk.innerText=time;
+    }
+    setInterval(showTime,1000);
+</script>   
+</body>
+</html>
