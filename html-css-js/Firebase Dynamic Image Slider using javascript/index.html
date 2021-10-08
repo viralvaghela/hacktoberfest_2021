@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hacktoberfest-2021</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/Carousel_Image_Slider-1.css">
+    <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+
+
+
+</head>
+
+<body>
+    <div class="card" style="margin: 22px;border-style: none;box-shadow: 0px 18px 80px rgba(0,0,0,0.22);">
+        <div class="card-body">
+            <div style="text-align: center;"><img src="assets/img/lockup.png" style="height: 45px;">
+                <h1 style="color: rgb(119,119,119);font-family: Poppins, sans-serif;font-size: 21.4px;margin-top: 7px;"><strong>Dynamic&nbsp;slider</strong><br><strong>&nbsp;using - RTDB</strong>&nbsp;&amp; Javascript<br></h1>
+            </div>
+        </div>
+    </div>
+    <div class="card" style="margin: 22px;border-style: none;box-shadow: 0px 18px 80px rgba(0,0,0,0.22);">
+        <div class="card-body">
+
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            </ol>
+            <div class="carousel-inner">
+
+
+
+
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+            </a>
+          </div>
+        </div>
+    </div>
+    <div class="card" style="margin: 22px;border-style: none;box-shadow: 0px 18px 80px rgba(0,0,0,0.22);">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div style="text-align: center;"><i class="fa fa-github-alt" style="font-size: 50px;"></i>
+                        <h1 style="color: var(--bs-blue);">@<a href="https://github.com/codersalman">codersalman</a></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center">
+        <div class="card" style="margin: 0;border-style: none;box-shadow: 0px 18px 80px rgba(0,0,0,0.22);">
+            <div class="card-body" style="padding: 16px;">
+                <h1 style="text-align: center;font-size: 11.64px;">Hacktoberfest-2021 @<a href="https://github.com/codersalman">CoderSalman</a>&nbsp;</h1>
+            </div>
+        </div>
+    </footer>
+
+<script type="text/javascript">
+// For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+var firebaseConfig = {
+  apiKey: "AIzaSyApByKOmN0xfvkj-rZ6jAfxnIhixh-YYbU",
+  authDomain: "fir-dynamic-slider.firebaseapp.com",
+  databaseURL: "https://fir-dynamic-slider-default-rtdb.firebaseio.com/",
+  projectId: "fir-dynamic-slider",
+  storageBucket: "fir-dynamic-slider.appspot.com",
+   };
+
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// get path data
+let dataset = firebase.database().ref();
+let user
+// get snapshot
+dataset.on("value", snap => {
+  // get data obj
+  user = snap.val();
+  updateRec();
+});
+
+function updateRec() {
+  document.querySelector('#myCarousel .carousel-inner').innerHTML = '';
+  document.querySelector('#myCarousel .carousel-indicators').innerHTML = '';
+  let count = 0;
+  let fActive = 'active';
+  for (let elm in user.Web_Banners) {
+    try {
+      document.querySelector('#myCarousel .carousel-inner').innerHTML += `
+   <div class="carousel-item ${fActive}">
+    <img class="d-block w-100" src="${user.Web_Banners[elm].Banner_Path}" alt="${user.Web_Banners[elm].Banner_Name}" style="height: auto; width: 100%;">
+      <div class="carousel-caption d-none d-md-block">
+          <h1>${user.Web_Banners[elm].Banner_Name}</h1>
+          <p></p>
+      </div>
+  </div>`;
+
+
+      document.querySelector('#myCarousel .carousel-indicators').innerHTML += `<li data-target="#myCarousel" data-slide-to="${count}" class="${fActive}"></li>`;
+
+      count++;
+      fActive='';
+    } catch (e) {
+      console.log(e);
+    }
+  }
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
