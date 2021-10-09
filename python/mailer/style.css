@@ -1,0 +1,10 @@
+/* Add your custom CSS here */
+
+.custom-class{
+  font-family : "arial";
+  font-weight: bold;
+  background: yellow;
+  width: max-content;
+  padding: 1em;
+  border-radius: 0.5em;
+}
