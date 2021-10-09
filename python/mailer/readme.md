@@ -23,6 +23,8 @@
 
 ## Step 3 :
 - Once done now you are all set, Now you can execute the [mailer.py](./mailer.py) from the root of the file. (...../python/mailer)
+![image](https://user-images.githubusercontent.com/59312489/136668990-01bed47a-2319-4fb7-87ba-ee54f736c22e.png)
+
 
 - And the mail will look as follows.
 
