@@ -18,11 +18,11 @@ import re
 try:
 
     # Login credentials
-    userMailId = "appauthenticator.1@gmail.com"
-    userPassword = "AuthCompany@123$"
+    userMailId = ""
+    userPassword = ""
 
     # The mail recipient settings
-    recipientMail = "thehappysurprises@gmail.com"
+    recipientMail = "sample@doe.com"
     mailSubject = "This is a sample mail"
 
     # The mailing port
