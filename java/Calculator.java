@@ -1,201 +1,119 @@
-// Java program to create a simple calculator
-// with basic +, -, /, * using java swing elements
 
-import java.awt.event.*;
-import javax.swing.*;
-import java.awt.*;
-class calculator extends JFrame implements ActionListener {
-	// create a frame
-	static JFrame f;
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
-	// create a textfield
-	static JTextField l;
+public class  Calculator extends Application 
+{
+    private int number1;
+	private int number2;
+	private String logic;
+	private TextField view;
+	private boolean flag;
 
-	// store operator and operands
-	String s0, s1, s2;
-
-	// default constructor
-	calculator()
-	{
-		s0 = s1 = s2 = "";
-	}
-
-	// main function
-	public static void main(String args[])
-	{
-		// create a frame
-		f = new JFrame("calculator");
-
-		try {
-			// set look and feel
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		}
-		catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
-
-		// create a object of class
-		calculator c = new calculator();
-
-		// create a textfield
-		l = new JTextField(16);
-
-		// set the textfield to non editable
-		l.setEditable(false);
-
-		// create number buttons and some operators
-		JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, ba, bs, bd, bm, be, beq, beq1;
-
-		// create number buttons
-		b0 = new JButton("0");
-		b1 = new JButton("1");
-		b2 = new JButton("2");
-		b3 = new JButton("3");
-		b4 = new JButton("4");
-		b5 = new JButton("5");
-		b6 = new JButton("6");
-		b7 = new JButton("7");
-		b8 = new JButton("8");
-		b9 = new JButton("9");
-
-		// equals button
-		beq1 = new JButton("=");
-
-		// create operator buttons
-		ba = new JButton("+");
-		bs = new JButton("-");
-		bd = new JButton("/");
-		bm = new JButton("*");
-		beq = new JButton("C");
-
-		// create . button
-		be = new JButton(".");
-
-		// create a panel
-		JPanel p = new JPanel();
-
-		// add action listeners
-		bm.addActionListener(c);
-		bd.addActionListener(c);
-		bs.addActionListener(c);
-		ba.addActionListener(c);
-		b9.addActionListener(c);
-		b8.addActionListener(c);
-		b7.addActionListener(c);
-		b6.addActionListener(c);
-		b5.addActionListener(c);
-		b4.addActionListener(c);
-		b3.addActionListener(c);
-		b2.addActionListener(c);
-		b1.addActionListener(c);
-		b0.addActionListener(c);
-		be.addActionListener(c);
-		beq.addActionListener(c);
-		beq1.addActionListener(c);
-
-		// add elements to panel
-		p.add(l);
-		p.add(ba);
-		p.add(b1);
-		p.add(b2);
-		p.add(b3);
-		p.add(bs);
-		p.add(b4);
-		p.add(b5);
-		p.add(b6);
-		p.add(bm);
-		p.add(b7);
-		p.add(b8);
-		p.add(b9);
-		p.add(bd);
-		p.add(be);
-		p.add(b0);
-		p.add(beq);
-		p.add(beq1);
-
-		// set Background of panel
-		p.setBackground(Color.blue);
-
-		// add panel to frame
-		f.add(p);
-
-		f.setSize(200, 220);
-		f.show();
-	}
-	public void actionPerformed(ActionEvent e)
-	{
-		String s = e.getActionCommand();
-
-		// if the value is a number
-		if ((s.charAt(0) >= '0' && s.charAt(0) <= '9') || s.charAt(0) == '.') {
-			// if operand is present then add to second no
-			if (!s1.equals(""))
-				s2 = s2 + s;
-			else
-				s0 = s0 + s;
-
-			// set the value of text
-			l.setText(s0 + s1 + s2);
-		}
-		else if (s.charAt(0) == 'C') {
-			// clear the one letter
-			s0 = s1 = s2 = "";
-
-			// set the value of text
-			l.setText(s0 + s1 + s2);
-		}
-		else if (s.charAt(0) == '=') {
-
-			double te;
-
-			// store the value in 1st
-			if (s1.equals("+"))
-				te = (Double.parseDouble(s0) + Double.parseDouble(s2));
-			else if (s1.equals("-"))
-				te = (Double.parseDouble(s0) - Double.parseDouble(s2));
-			else if (s1.equals("/"))
-				te = (Double.parseDouble(s0) / Double.parseDouble(s2));
-			else
-				te = (Double.parseDouble(s0) * Double.parseDouble(s2));
-
-			// set the value of text
-			l.setText(s0 + s1 + s2 + "=" + te);
-
-			// convert it to string
-			s0 = Double.toString(te);
-
-			s1 = s2 = "";
-		}
-		else {
-			// if there was no operand
-			if (s1.equals("") || s2.equals(""))
-				s1 = s;
-			// else evaluate
-			else {
-				double te;
-
-				// store the value in 1st
-				if (s1.equals("+"))
-					te = (Double.parseDouble(s0) + Double.parseDouble(s2));
-				else if (s1.equals("-"))
-					te = (Double.parseDouble(s0) - Double.parseDouble(s2));
-				else if (s1.equals("/"))
-					te = (Double.parseDouble(s0) / Double.parseDouble(s2));
-				else
-					te = (Double.parseDouble(s0) * Double.parseDouble(s2));
-
-				// convert it to string
-				s0 = Double.toString(te);
-
-				// place the operator
-				s1 = s;
-
-				// make the operand blank
-				s2 = "";
-			}
-
-			// set the value of text
-			l.setText(s0 + s1 + s2);
+    public class MyButton extends Button{
+ 
+        public MyButton(String text) {
+            super(text);
+            setPrefWidth(35);
+            setPrefHeight(30);
+        }
+    }
+	public void start(Stage primaryStage) 
+    {
+		try 
+        {
+			AnchorPane root = new AnchorPane();
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.setWidth(228);
+			primaryStage.setHeight(260);
+			primaryStage.setResizable(false);
+			addComp(root);
+			primaryStage.show();
+		} 
+        catch(Exception e) 
+        {
+			e.printStackTrace();
 		}
 	}
+	private void addComp(AnchorPane root) 
+    {
+		view = new TextField("0");
+		view.setMinSize(200, 50);
+		view.setLayoutX(10);
+		view.setLayoutY(15);
+		view.setEditable(false);
+		view.setAlignment(Pos.CENTER_RIGHT);
+		view.setFont(new Font("Consolas", 20));
+		root.getChildren().add(view);
+		
+		GridPane gridPane = new GridPane();
+		gridPane.setHgap(20);
+		gridPane.setVgap(10);
+		gridPane.setLayoutY(65);
+		gridPane.setPrefWidth(228);
+		gridPane.setPrefHeight(185);
+		gridPane.setPadding(new Insets(10));
+
+		root.getChildren().add(gridPane);
+		Button btn7 = new MyButton("7");
+		gridPane.add(btn7,0,0);
+		
+		Button btn8 = new MyButton("8");
+		gridPane.add(btn8,1,0);
+		
+		Button btn9 = new MyButton("9");
+		gridPane.add(btn9,2,0);
+		
+		Button btn4 = new MyButton("4");
+		gridPane.add(btn4,0,1);
+		
+		Button btn5 = new MyButton("5");
+		gridPane.add(btn5,1,1);
+		
+		Button btn6 = new MyButton("6");
+		gridPane.add(btn6,2,1);
+		
+		Button btn1 = new MyButton("1");
+		gridPane.add(btn1,0,2);
+		
+		Button btn2 = new MyButton("2");
+		gridPane.add(btn2,1,2);
+		
+		Button btn3 = new MyButton("3");
+		gridPane.add(btn3,2,2);
+		
+		Button btn0 = new MyButton("0");
+		gridPane.add(btn0,0,3);
+		
+		Button btnC = new MyButton("C");
+		gridPane.add(btnC,1,3);
+		
+		Button btneq = new MyButton("=");
+		gridPane.add(btneq,2,3);
+
+        Button btnadd = new MyButton("+");
+		gridPane.add(btnadd,3,0);
+		Button btnsub = new MyButton("-");
+		gridPane.add(btnsub,3,1);
+		Button btnmul = new MyButton("*");
+		gridPane.add(btnmul,3,2);
+		Button btndiv = new MyButton("/");
+		gridPane.add(btndiv,3,3);
+
+    }
+
+	public static void main (String[] args)  
+    {  
+        launch(args);  
+    }  
+
 }
