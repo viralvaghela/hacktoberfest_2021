@@ -4,7 +4,7 @@ import 'package:whatasapp_status/Bloc/BlocProvider.dart';
 import 'package:whatasapp_status/Bloc/MainScreenBloc/MainScreenBloc.dart';
 import 'package:whatasapp_status/Bloc/MainScreenBloc/MainScreenEvent.dart';
 
-import 'Screens.dart/HomeScreen.dart';
+import 'Screens/HomeScreen.dart';
 
 Future<void> main() async {
   runApp(MyApp());

@@ -1,9 +1,9 @@
-
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
+
 import 'package:video_thumbnail/video_thumbnail.dart';
+import 'package:whatasapp_status/Screens/VideoPreviewScreen.dart';
 
 class VideoCardView extends StatelessWidget {
   VideoCardView(this.location);
@@ -16,26 +16,20 @@ class VideoCardView extends StatelessWidget {
           if (snapshot.hasData) {
             return InkWell(
               onTap: () {
-                Share.shareFiles([location]);
-                print(location);
+                // Share.shareFiles([location]);
+                // print(location);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return VideoPreviewScreen(location: location);
+                }));
               },
               child: Card(
                 margin: EdgeInsets.zero,
                 elevation: 4,
-                child: Stack(
-                    fit: StackFit.passthrough,
-                    alignment: Alignment.center,
-                    children: [
-                      Image(
-                        image: snapshot.data!.image,
-                        fit: BoxFit.cover,
-                        filterQuality: FilterQuality.low,
-                      ),
-                      Icon(
-                        Icons.share,
-                        color: Colors.white.withAlpha(200),
-                      ),
-                    ]),
+                child: Image(
+                  image: snapshot.data!.image,
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.low,
+                ),
               ),
             );
           } else {
@@ -48,7 +42,7 @@ class VideoCardView extends StatelessWidget {
 
   Future<Image> getVideoThumbnail(String path) async {
     Uint8List? data = await VideoThumbnail.thumbnailData(
-      video: "/"+path,
+      video: "/" + path,
       imageFormat: ImageFormat.JPEG,
       maxWidth: 128,
       quality: 25,
