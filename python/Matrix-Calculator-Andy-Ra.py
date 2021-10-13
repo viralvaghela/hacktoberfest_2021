@@ -15,7 +15,7 @@ while (repeat == 'Y' or repeat == 'y'):
     ##To Insert a order matrix
     print ("Please choose one of the commands :")
     print ("1. matrix addition")
-    print ("2. matrix subtraction (coming soon)")
+    print ("2. matrix subtraction")
     choose = input("Number :")
 
     print ("")
