@@ -1,0 +1,20 @@
+public class XorClass{
+
+     public static void main(String []args){
+        byte[] data = "hello".getBytes();
+        byte[] data2 = "world".getBytes();
+        
+        byte[] newData = xor(data,data2);
+     }
+     
+      public static byte[] xor(byte[] array1, byte[] array2) {
+        byte[] finalArray = new byte[array1.length];
+
+        for(int i = 0; i < array1.length; ++i) {
+            finalArray[i] = (byte)(array1[i] ^ array2[i]);
+        }
+
+        return finalArray;
+    }
+    
+}
