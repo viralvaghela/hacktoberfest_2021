@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/map"
+    android:title="covid test center"
+    android:icon="@drawable/ic_language"
+    app:showAsAction="always"
+    />
+    <item
+        android:id="@+id/call"
+        android:title="helpline number"
+        android:icon="@drawable/ic_call1"
+        app:showAsAction="always"/>
+</menu>
