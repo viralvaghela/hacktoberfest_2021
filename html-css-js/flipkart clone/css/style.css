@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@600&display=swap");
+
+:root {
+  --main-bg-color: #2874f0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background: var(--main-bg-color);
+}
+
+nav{
+    display: flex;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+} 
+
+.logo img{
+    width: 87px;
+    padding: 0 24px;
+}
+nav ul li {
+  list-style: none;
+  padding: 0 23px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 10;
+  font-family: "Vollkorn", serif;
+}
+
+nav ul li a:hover {
+    font-weight: bolder;
+}
+
+
+nav ul {
+  height: 46px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input{
+    width: 30vw;
+    height: 27px;
+    border-radius: 5px;
+    margin: 0 12px 0 50px;
+    padding: 0 10px;
+}
+
+.search button{
+  font-family: "Vollkorn", serif;
+}
+
+
+.container{
+    min-height:calc(100vh - 46px - 12vh) ;
+}
+.slider{
+  margin: 15px auto;
+  width: 80vw;
+  overflow: hidden;
+
+}
+
+
+.card{
+  max-width: 90vw;
+  margin: 27px auto;
+  font-family: "Vollkorn", serif;
+}
+
+.cards{
+
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  overflow: scroll;
+
+}
+
+.card-item{
+  max-width: 18vw;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+footer {
+  height: 12vh;
+  background: var(--main-bg-color);
+  color: white;
+  font-family: "Vollkorn", serif;
+}
