@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form by Damini M.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1>Sign up form</h1>
+        <div class="form-container">
+            <div class="form" id="form"></div>
+            <div class="circle active"><i class="fab fa-1"></i></div>
+            <div class="circle "><i class="fab fa-2"></i></div>
+            <div class="circle "><i class="fab fa-3"></i></div>    
+        </div>    
+        
+      <div class="formss form-step-active">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div class="input-group">
+          <label for="Name">Full Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        </div>
+
+      <div class="formss">
+        <div class="input-group">
+          <label for="phone">Phone</label>
+          <input type="text" name="phone" id="phone" />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" />
+        </div>
+        
+        <div class="input-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" id="dob" />
+        </div>
+        </div>
+        
+      <div class="formss">
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" name="confirmPassword" id="confirmPassword" />
+        </div>
+
+        <button class="submit">Submit</button>
+        </div>
+
+        <button class="btn" id="prev" disabled>Prev</button>
+      <button class="btn" id="next" >Next</button>
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
