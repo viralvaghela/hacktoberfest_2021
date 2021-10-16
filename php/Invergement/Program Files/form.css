@@ -1,0 +1,25 @@
+form{
+	background:#F0F0F0;
+	width: 550px;
+	margin-top: 50px;
+	border:1px solid #DCDCDC;
+}
+
+h2{
+	background: #808080;
+	margin-right: 30px;
+	margin-left: 30px;
+	font-weight: bolder;
+	padding: 20px;
+}
+
+.add-button{
+	background:#808080;
+	color: white;
+	width: 150px;
+}
+
+.text-input{
+	width: 200px;
+}
+
