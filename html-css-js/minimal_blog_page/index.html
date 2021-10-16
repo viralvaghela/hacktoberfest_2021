@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs | Hemsbansal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+ <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container{
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+    }
+    nav{
+      background-color: rgb(230, 230, 255);
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+    }
+    nav .logo{
+      margin-bottom: 1rem;
+    }
+    nav .logo img{
+      width: 90%;mix-blend-mode: multiply;
+    }
+    nav .desc{
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      font-weight: 100;
+    }
+    nav ul{
+      display: flex;
+      padding: 0;
+      flex-direction: column;
+    }
+    nav ul a{
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    nav ul a:hover{
+      color: dodgerblue;
+    }
+    nav .copyright{
+      margin: 2rem 0;
+      color: #777;
+      text-align: center;
+    }
+
+    .main-section{
+      padding: 2rem;
+    }
+    .main-section .desc{
+      color: #777;
+      margin-bottom: 4rem;
+    }
+    .post{
+      margin: 2rem 0;
+    }
+    .post .meta-data{
+      display: flex;
+      margin-bottom: 1rem;
+    }
+    .post .meta-data span{
+      margin: 0 1rem;
+    }
+    .post .meta-data a{
+      text-decoration: none;
+      color: black;
+    }
+    .post .meta-data a:hover{
+      color: dodgerblue;
+    }
+    .post img{
+      border-radius: 10px;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .post img:hover{
+      opacity: 0.6;
+    }
+    .post .post-desc{
+      font-weight: 100;
+    }
+    .post .read-more{
+      padding: 0.7rem 1rem;
+      color: dodgerblue;
+      border: 1px solid dodgerblue;
+      transition: .2s;
+    }
+    .post .read-more:hover{
+      background-color: dodgerblue;
+      color: white;
+    }
+    hr{
+      border: none;
+      border-top: 1px solid #eee;
+    }
+    .pagination{
+      margin: 3rem 0;
+    }
+    .pagination button{
+      background-color: transparent;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      padding: .8rem;
+      font-size: 1.2rem;
+      transition: .2s;
+      cursor: pointer;
+    }
+    .pagination button:hover, .active{
+      border: 2px solid #444;
+      background-color: #444;
+      color: white;
+    }
+
+
+    .sidebar{
+      padding: 2rem;
+    }
+    .sidebar .ads{
+      position: relative;
+    }
+    .sidebar .ads button{
+      position: absolute;
+      right: 0%;
+      font-size: 11px;
+      border: none;
+      outline: none;
+      pointer-events: none;
+    }
+    .sidebar .ads img{
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="https://i2.wp.com/www.namecheap.com/blog/wp-content/uploads/2016/11/Blog_RGB_Color_Digital_General_Logo_Large-1.jpg" alt="">
+      </div>
+      <p class="desc">Graduating from the halls of the University Of Western Sydney in late 2011.</p>
+
+      <ul>
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Lifestyle</a>
+        <a href="#">Travel</a>
+        <a href="#">Music</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </ul>
+
+      <div class="copyright">2020 &copy; Blogwala</div>
+    </nav>
+
+
+
+    <div class="main-section">
+      <h1 class="title">News and Stories</h1>
+      <p class="desc">
+        A life portfolio offers a compelling alternative to traditional retirement. It is a new way of thinking and living in extended middle age. A typical portfolio is a balanced mix of some work, ongoing learning, recreation, travel and avocations, reconnecting with family and friends, and giving back. 
+        
+        <p style="text-align: right;font-weight: 500;margin-top: -30px;">-Michael Jeans</p>
+      </p>
+
+
+      <div class="post">
+        <h3>Beautify Day With Friends In Paris</h3>
+        <div class="meta-data">
+          July 03, 2021
+          <span>
+            <a href="#">Branding</a>,
+          <a href="#">Design</a>
+          </span>
+          <a href="#">3 Comments</a>
+        </div>
+        <img src="./img1.jpg" width="100%" height="auto" alt="">
+        <p class="post-desc">Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.</p>
+
+        <button class="read-more">READ MORE &rightarrow;</button>
+      </div>
+
+      <div class="post">
+        <h3>Announcing Voice of Cards: The Isle Dragon Roars</h3>
+        <div class="meta-data">
+          July 03, 2021
+          <span>
+            <a href="#">PlayStation 5</a>,
+          <a href="#">Design</a>
+          </span>
+          <a href="#">5 Comments</a>
+        </div>
+        <img src="./img2.webp" width="100%" height="auto" alt="">
+        <p class="post-desc">Announcing Voice of Cards: The Isle Dragon Roars
+          .
+          In Voice of Cards: The Isle Dragon Roars, the Game Master (voiced in English by Todd Haberkorn) will narrate and guide players through a story.</p>
+
+        <button class="read-more">READ MORE &rightarrow;</button>
+      </div>
+
+      <hr>
+
+
+      <div class="pagination">
+        <button>Prev</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>Next</button>
+
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <a href="#" class="ads">
+        <button>Sponsored</button>
+        <img src="https://source.unsplash.com/random/200x100" alt="">
+      </a>
+
+
+
+      <h4>ABOUT ME</h4>
+      <hr>
+
+      <img src="https://pbs.twimg.com/profile_images/1365362869852807172/P-SL7l8O_400x400.jpg" width="70px" alt="" class="author-dp">
+
+      <div class="author-about">
+        Hi, I'm Hemant Bansal.
+      </div>
+
+      <h4>SUBSCRIBE & FOLLOW</h4>
+      <hr>
+
+
+      <a href="https://twitter.com/hemsbansal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1DA1F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+      <a href="https://facebook.com/hemsbansal" style="margin:0 15px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b5998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+      <h4>CATEGORIES</h4>
+      <hr>
+<div style="display: flex;flex-direction: column;line-height: 30px;">
+
+  <a href="#">Journey (40)</a>
+  <a href="#">Photography (08)</a>
+  <a href="#">Lifestyle (11)</a>
+  <a href="#">Food & Drinks (21)</a>
+</div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+</body>
+</html>
