@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac</title>
+	<link rel="stylesheet" type="text/css" href="css/style-main.css">
+
+	<script type="text/javascript" defer src="js/winning.js"></script>
+	<script type="text/javascript" defer src="js/ai.js"></script>
+	<script type="text/javascript" defer src="js/possibility.js"></script>
+
+	<script type="text/javascript" defer>
+		var done = 0;
+
+		var sectionSpace = [
+			0, 0, 0, 0, 0, 0, 0, 0, 0
+		];
+		var sectionSpaceString = [
+			"empty","empty","empty","empty","empty","empty","empty","empty","empty"
+		];
+
+		var condition,userInput,IsCornurEmpty,IsCenterEmpty,IsSideEmpty;
+		var corner,randm,valu;
+		randomise();
+		function checkEmpty(randm){
+			if(randm <= 9){
+				switch(sectionSpace[randm]){
+					case 0:{
+						condition = 1;
+						checkCondition();
+						return condition;
+						break;
+					}
+					case 1:{
+						condition = 0;
+						randomise();
+						checkCondition();
+						return condition;
+						break;
+					}
+				}
+			}
+			else{
+				randomise();
+			}
+		}
+
+		//function begins
+		function addIt(userInput){
+			//sectionSpace[userInput] = 1;
+			switch(sectionSpace[userInput]){
+				case 0:{
+					sectionSpace[userInput] = 1;
+					if(!(document.getElementById('results').innerHTML == "You won!" || document.getElementById('results').innerHTML == "You Lost!")){
+						addCross(userInput);
+						checkHorizontalCross();
+						checkVerticalCross();
+						checkDiagCross();
+						if(!(document.getElementById('results').innerHTML == "You won!" || document.getElementById('results').innerHTML == "You Lost!")){
+							checkDraw();
+						}
+
+						for(var i=0; i<=8; i++){
+							document.getElementById('sec'+i).disabled = true;
+						}
+						setTimeout(function (){checkEmpty(randm);}, 1000);
+					}
+
+					break;
+				}
+				case 1:{
+					break;
+				}
+			}
+			
+		}
+
+		function addCircle(valu){
+			if(done == 0){
+				sectionSpace[valu] = 1;
+				var circleElem = document.createElement("img");
+				circleElem.setAttribute("src", "img/circle.png");
+				document.getElementById('sec' +valu).appendChild(circleElem);
+				sectionSpaceString[valu] = "circle";
+
+				done += 1;
+				for(var i=0; i<=8; i++){
+					document.getElementById('sec'+i).disabled = false;
+				}
+			}
+		}
+		function addCross(userInput){
+			sectionSpace[userInput] = 1;
+			var crossElem = document.createElement("img");
+			crossElem.setAttribute("src", "img/cross.png");
+			document.getElementById('sec' +userInput).appendChild(crossElem);
+			sectionSpaceString[userInput] = "cross";
+			done = 0;
+		}
+		function checkCondition(){
+			switch(condition){
+				case 1:{
+					if(!(document.getElementById('results').innerHTML == "You won!" || document.getElementById('results').innerHTML == "You Lost!")){
+						IsCornurEmpty = checkCornur();
+						IsSideEmpty = checkSides();
+						IsCenterEmpty = checkCentur();
+						(IsCenterEmpty ? IsSideEmpty : IsCornurEmpty)
+
+						console.log("check user probab...");
+						checkUserPrb();
+					}
+					checkHorizontalCircle();
+					checkVerticalCircle();
+					checkDiagCircle();
+					if(!(document.getElementById('results').innerHTML == "You won!" || document.getElementById('results').innerHTML == "You Lost!")){
+							checkDraw();
+					}
+					break;
+				}
+				case 0:{
+					randomise();
+					checkEmpty(randm);
+					break;
+				}
+			}
+		}
+		function randomise(){
+			randm = Math.floor(Math.random() * 9);
+			corner = Math.floor(Math.random() * 4);
+		}
+	</script>
+</head>
+<body>
+	<div id="main">
+
+		<div id="upper">
+			<button id="sec0" onclick="addIt(0);" >
+				
+			</button>
+			<button id="sec1" onclick="addIt(1);">
+				
+			</button>
+			<button id="sec2" onclick="addIt(2);">
+					
+			</button>
+		</div>
+
+		<div id="midd">
+			<button id="sec3" onclick="addIt(3);">
+			
+			</button>
+			<button id="sec4" onclick="addIt(4);">
+				
+			</button>
+			<button id="sec5" onclick="addIt(5);">
+				
+			</button>
+		</div>
+		<div id="bottm">
+			<button id="sec6" onclick="addIt(6);">	
+			
+			</button>
+			<button id="sec7" onclick="addIt(7);">
+			
+			</button>
+			<button id="sec8" onclick="addIt(8);">
+
+			</button>
+		</div>
+	</div>
+	<div id="results">
+		
+	</div>
+</body>
+</html>
