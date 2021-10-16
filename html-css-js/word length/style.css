@@ -1,0 +1,24 @@
+body{
+    background-color:#7971d1;
+    text-align: center;
+}
+
+input{
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+#output{
+    margin: auto;
+    color: white;
+}
+
+#btn{
+    color: #fff;
+    background-color:blue;
+    border-style: none;
+    margin-top: 20px;
+    padding: 0 15px;
+    cursor: pointer;
+}
