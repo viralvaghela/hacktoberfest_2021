@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+#container {
+  display: flex;
+}
+
+#container h1 {
+  color: #f37735;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#container h2 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  font-weight: normal;
+}
+
+#container h3 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  font-weight: normal;
+}
+
+#player_1,
+#player_2 {
+  flex-grow: 1;
+  margin-top: 20rem;
+}
+
+#player_1 img,
+#player_2 img {
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+
+#player_1 img {
+  padding-bottom: 2rem;
+}
+
+#board {
+  flex-shrink: 0;
+  margin: 0 auto;
+  margin-top: 7rem;
+  display: block;
+  text-align: center;
+  height: auto;
+  width: auto;
+}
+
+.board {
+  opacity: 1;
+}
+
+.row {
+  height: 6rem;
+}
+
+.col {
+  min-width: 6rem;
+  min-height: 6rem;
+  display: inline-block;
+  border: 1px solid #333;
+}
+
+/* Obstacles */
+.obstacles {
+  background: url(../img/rocks.png) no-repeat center;
+  background-size: contain;
+}
+
+/* Weapons */
+.weapon {
+  transition: background-image 0.5s;
+}
+
+.pipe,
+.antenna,
+.metal,
+.barrel {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.pipe {
+  background: url(../img/w1_pipe.png) no-repeat center;
+  background-size: contain;
+}
+
+.antenna {
+  background: url(../img/w2_antenna.png) no-repeat center;
+  background-size: contain;
+}
+
+.metal {
+  background: url(../img/w3_metal.png) no-repeat center;
+  background-size: contain;
+}
+
+.barrel {
+  background: url(../img/w4_barrel.png) no-repeat center;
+  background-size: contain;
+}
+
+/* Show Players */
+.playerOneActive {
+  background: url(../img/PlayerOne.png) no-repeat center;
+  background-size: contain;
+}
+
+.playerTwoActive {
+  background: url(../img/PlayerTwo.png) no-repeat center;
+  background-size: contain;
+}
+
+.playerOneActive,
+.playerTwoActive {
+  transition: all 1s;
+}
+
+.canMove {
+  border: 2px solid green;
+}
+
+/* Fight */
+#versus {
+  color: #f37735;
+  display: none;
+  flex-grow: 1;
+  font-size: 8rem;
+  margin-top: 22rem;
+}
+
+#player_1_fight,
+#player_2_fight {
+  display: none;
+  flex-grow: 1;
+  padding-top: 20rem;
+}
+
+#player_1_fight img {
+  margin-top: 1.6rem;
+}
+
+#player_1_fight img,
+#player_2_fight img {
+  width: 17rem;
+}
+
+#fight_buttons_1 {
+  margin-top: 1.9rem;
+}
+
+.button {
+  display: block;
+  margin: 2rem 1rem 0 1rem;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  position: relative;
+  background-color: #f37735;
+  transition: background-color 0.5s;
+}
+
+.button:hover {
+  background-color: #a85528;
+}
+
+/* Winner section */
+#winner {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 9999;
+}
+
+#winner h1 {
+  margin-top: 6rem;
+  font-size: 4.5rem;
+}
+
+#winner h2 {
+  margin-top: 2rem;
+  color: #f37735;
+  font-size: 5.5rem;
+}
+
+#playAgain {
+  margin-top: 4rem;
+}
+
+#winnerImg {
+  margin: 2rem 0;
+}
+
+/* Play again button */
+#playAgainBtn {
+  border: 0;
+  padding: 16px 42px;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+  line-height: 1.25;
+  color: white;
+  background-color: #f37735;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color 0.5s;
+}
+
+#playAgainBtn:hover {
+  background-color: #a85528;
+}
