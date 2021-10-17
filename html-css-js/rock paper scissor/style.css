@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.score {
+    margin: 5px auto;
+    background-color: rgb(103, 55, 148);
+    padding: 10px 20px;
+    color: white;
+}
+
+.btn {
+    display: inline;
+    padding: 0 5px;
+}
+
+button {
+    border-style: none;
+    background-color: tomato;
+    padding: 10px 30px;
+    margin: 20px 0;
+    cursor: pointer;
+}
