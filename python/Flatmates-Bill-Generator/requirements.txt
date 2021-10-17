@@ -5,4 +5,4 @@ fpdf==1.7.2
 idna==2.10
 requests==2.23.0
 trafaret==2.0.2
-urllib3==1.25.11
+urllib3==1.26.5
