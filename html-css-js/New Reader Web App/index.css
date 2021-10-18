@@ -1,0 +1,306 @@
+    
+:root{
+    --grayishBlue:hsl(208, 11%, 55%);
+    --transitionSpeed:600ms;
+    font-size: 18px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    --moderateViolet:rgb(108,99,255);
+    --darkGrayishBlue:rgb(47,46,65);
+    --darkBlakishBlue:rgb(63,61,86);
+    --white:hsl(0, 0%, 100%);
+    --lightGray:hsl(0, 0%, 81%);
+    --lightGrayishBlue:hsl(210, 46%, 95%);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+    border-right: 2px solid rgba(107, 99, 255, 0.267);
+    border-left: 2px solid rgba(107, 99, 255, 0.267);
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Header has been designed here/////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#header{
+    position:fixed;
+    top: 0;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+    flex-wrap: wrap;
+    /* border: 2px solid black; */
+    max-width: 1440px;
+    width: 100%;
+    z-index: 1;
+    transition: 0.6s;
+}
+
+.sticky{
+  background-color: rgba(107, 99, 255, 0.267);
+}
+.sticky h2{
+    color:  var(--darkGrayishBlue);
+}
+
+header h2{
+    position: relative;
+    width: 15rem;
+    filter: sepia(200%) hue-rotate(199deg);
+    font-family: 'Shrikhand', cursive;
+    letter-spacing: 1px;
+    margin: 0rem 1rem;
+}
+
+header img:hover{
+   cursor: pointer;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// Navbar Styling section ////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+.navbar{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.navbar-nav{
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    /* width: 70%; */
+    justify-content: space-between;
+    margin: 0;
+    position: relative;
+}
+
+.navbar-nav .navItem a{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    color:  black;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.navItem{
+    padding: 1rem;
+    margin:0.1rem;
+    position: relative;
+}
+
+.navItem a:hover{
+    color: var(--moderateViolet);
+    text-shadow: 0px 0px 10px white;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Hamburger Icon /////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.hamburgerIcon{
+    display: none;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+  
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// News section ////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.newsSection{
+   padding:  4rem 2rem 0rem 2rem;
+   font-family: 'Poppins', sans-serif;
+   font-size: 1.3rem;
+   border-bottom: 1px solid var(--darkGrayishBlue);
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////// Individual Cards ////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.newsSection h2{
+    border-bottom: 3px solid #777;
+    margin: 2rem;
+ }
+ 
+ .newsDiv{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap: 2rem;
+    margin: 3rem 2rem 3rem 2rem;
+    justify-content: baseline;
+ }   
+ 
+ .news-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0rem 1rem 0 1rem 0;
+    border:2px solid rgba(141, 136, 247, 0.356);
+    padding: 1rem;
+    border-radius: 5px;
+    transition: all var(--transitionSpeed);
+ }
+ .news-container:hover{
+    transform: scale(1.1);
+    border:2px solid rgba(142, 136, 247, 0.644);
+ }
+
+ .thumbnail{
+     position: relative;
+     display: flex;
+ }
+ .thumbnail-image{
+     width: 100%;
+     height: 100%;
+     min-width: 20rem;
+     min-height: 10rem;
+     background-color: #aaa;
+ }
+ .thumbnail-image:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(img/default.jpg);
+    background-size: cover;
+}
+
+ .news-bottom-section{
+     display: flex;
+     flex-direction: row;
+     align-items: flex-start;
+     margin-top: 1.6rem;
+ }
+ 
+ .news-details{
+     display: flex;
+     flex-direction: column;
+ }
+ .news-title{
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+      color: black;
+ }
+
+ .news-title:hover{
+     color: var(--moderateViolet);
+ }
+
+ .news-source-name{
+     text-decoration: none;
+     color: #555;
+     margin-bottom: 0rem;
+     transition: color 150ms;
+ }
+ 
+ .news-source-name:hover{
+     color: var(--moderateViolet) ;
+ }
+ .news-meta,.news-source-name{
+     color: #777; 
+     font-size: 0.8rem;
+ }
+  
+ .news{
+    background-color: #f9f9f9;
+ }
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////  Media Queries  ////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width:1275px){
+    #header{
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .sticky img{
+        display: block;
+    }
+    .navbar{
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width:1070px){
+    #header{
+        justify-content: space-between;
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .hamburgerIcon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h2{
+        width: 12rem;
+    }
+
+    .navbar{
+        display: none;
+        width: 100%;
+    }
+
+    .show{
+        display: inline-block;
+    }
+
+    .show ul{
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.767);
+    }
+    .show .navbar-nav .navItem a{
+         justify-content: center;
+         text-align: left;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #header{
+        padding: 0.5rem;
+    }
+}
