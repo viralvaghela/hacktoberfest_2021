@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Text to speech!</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+    <!-- Giving links to jquery and bootstraps js libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="container text-center">
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <div class="form-group">
+                    <div id="front-text" class="text-success">
+                        Text-to-Speech
+                    </div>
+
+                    <!-- Input box text area -->
+                    <textarea id="maintext" class="form-control form-control-lg" style="max-lines: 2"
+                        placeholder="Enter the text...">
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rate of voice which we will be updated by user -->
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <div class="form-group">
+                    <label for="rate">Rate</label>
+                    <div id="rate-value" class="badge badge-primary">5</div>
+                    <input class="custom-range" type="range" id="rate" max="1" min="0.2" value="0.5" step="0.1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Pitch of voice which we will be updated by user -->
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <div class="form-group">
+                    <label for="pitch">Pitch</label>
+                    <div id="pitch-value" class="badge badge-primary">5</div>
+                    <input class="custom-range" type="range" id="pitch" max="1" min="0.2" value="0.5" step="0.1">
+                </div>
+            </div>
+        </div>
+
+        <!-- The different types of voice along with country and language -->
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <div class="form-group">
+
+                    <!-- This section will be dynamically loaded from
+                        the API so we left it blank for now-->
+                    <select class="form-control form-control-lg" id="voice-select"></select>
+                </div>
+
+                <!-- Button to enable the speech from the 
+                    text given in the input box -->
+                <button id="submit" class="btn btn-success btn-lg">
+                    Speak it
+                </button>
+            </div>
+        </div>
+    </form>
+    <!-- Custom JS that contains all the main functions -->
+    <script src="main.js"></script>
+</body>
+
+</html>
