@@ -1,0 +1,35 @@
+body {
+    background: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-attachment: fixed;
+}
+  
+#front-text {
+    font-size: 35px;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px black;
+    display: block;
+    position: relative;
+    margin-bottom: 5%;
+    margin-top: 15%;
+}
+  
+#rate-value {
+    float: right;
+}
+  
+#pitch-value {
+    float: right;
+}
+  
+#foot {
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+    display: block;
+    position: relative;
+    margin-top: 1%;
+}
