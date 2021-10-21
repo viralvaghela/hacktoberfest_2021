@@ -1,0 +1,32 @@
+<?php 
+
+function sortByIdsMap(array &$items, array $map): void
+{
+    $itemsSortIdsMap = [];
+    foreach (array_keys($items) as $key) {
+        $itemsSortIdsMap[$key] = array_search($key, $map, false);
+    }
+    
+    array_multisort($itemsSortIdsMap, $items);
+}
+
+$items = [
+    'SECOND_MESSAGE' => 'text message 2',
+    'FIRS_MESSAGE' => 'text message 1',
+    'THIRD_MESSAGE' => 'text message 3',
+];
+
+$map = ['FIRS_MESSAGE', 'SECOND_MESSAGE', 'THIRD_MESSAGE'];
+
+sortByIdsMap($items, $map);
+
+print_r($items);
+
+/*
+Array
+(
+    [FIRS_MESSAGE] => text message 1
+    [SECOND_MESSAGE] => text message 2
+    [THIRD_MESSAGE] => text message 3
+)
+*/
