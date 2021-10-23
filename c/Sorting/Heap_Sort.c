@@ -1,3 +1,13 @@
+/* Heap Sort
+ * Time Complexity:-
+ * Best      || Average || Worst
+ * Ω(N log N)	 Θ(N log N)  O(N log N)
+ * Auxilary Space:- O(1)
+ * In-Place:-Yes
+ * Stable:- No but can be Made 
+*/
+
+
 #include<stdio.h>  
 int temp;  
   
