@@ -1,0 +1,32 @@
+{
+    "name": "kayo/php-cli",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^9.5",
+        "symfony/console": "^5.3",
+        "php-di/php-di": "^6.3",
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "ASPTest\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kayo Bruno",
+            "email": "kayodw@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test:unit": "./vendor/bin/phpunit tests --colors=always --testdox",
+        "test": [
+            "@test:unit"
+        ]
+    }
+}

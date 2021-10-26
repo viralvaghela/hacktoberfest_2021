@@ -1,0 +1,29 @@
+#!/usr/local/bin/php
+<?php
+
+if (php_sapi_name() !== 'cli') {
+    exit;
+}
+
+require __DIR__ . '/vendor/autoload.php';
+
+use ASPTest\App\Commands\CreatePasswordUserCommand;
+use ASPTest\App\Commands\CreateUserCommand;
+use DI\ContainerBuilder;
+use Symfony\Component\Console\Application;
+
+try {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+
+    $builder = new ContainerBuilder();
+    $builder->addDefinitions(__DIR__ . '/config/di-definitions.php');
+    $container = $builder->build();
+
+    $application = new Application();
+    $application->add($container->get(CreateUserCommand::class));
+    $application->add($container->get(CreatePasswordUserCommand::class));
+    $application->run();
+} catch (\Exception $e) {
+    echo "Error: {$e->getMessage()}";
+}

@@ -1,0 +1,4 @@
+/vendor/
+/.docker/mysql/
+/.idea/
+.env
